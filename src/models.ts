@@ -43,9 +43,9 @@ export const attiny16xxModel = new SeesawChipModel({
 
 export const samd09Model = new SeesawChipModel({
     touchPins: [],
-    adcPins: [2,3,4,5],
+    adcPins: [2,3,4],
     dacPins: [],
-    pwmPins: [4,5,6,7],
+    pwmPins: [5,6,7],
     pwmWidth: 8,
     chipId: [0x55]
 });

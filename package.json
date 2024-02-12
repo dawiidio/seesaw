@@ -1,7 +1,7 @@
 {
-  "name": "xxx",
+  "name": "@dawiidio/seesaw",
   "version": "0.0.1",
-  "description": "Compact design tokens parser",
+  "description": "Adafruit seesaw boards driver for node",
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
@@ -22,11 +22,28 @@
     "tsc-alias": "^1.8.8",
     "typescript": "^5.3.3"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@dawiidio/quarksy": "^0.0.6",
+  "peerDependencies": {
     "i2c-bus": "^5.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dawiidio/seesaw.git"
+  },
+  "keywords": [
+    "node",
+    "adafruit",
+    "seesaw",
+    "i2c",
+    "arduino"
+  ],
+  "author": {
+    "email": "dawid@dawiid.io",
+    "name": "Dawid Wojda",
+    "url": "https://dawiid.io/"
+  },
+  "private": false,
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
   }
 }
