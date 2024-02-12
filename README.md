@@ -33,7 +33,7 @@ async function main() {
 
     const ledPin = 15;
     const adcPin = 2;
-    await device.pinMode(pin, SeesawPinMode.OUTPUT);
+    await device.pinMode(ledPin, SeesawPinMode.OUTPUT);
     await device.pinMode(adcPin, SeesawPinMode.INPUT);
 
     setInterval(async () => {
