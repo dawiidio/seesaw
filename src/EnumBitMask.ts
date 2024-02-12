@@ -1,13 +1,14 @@
-import {Buffer} from "node:buffer";
+import {Bufferable} from "~/utils";
 
 export type RegisterMaskObject<T extends readonly string[]> = Record<T[number], number>;
 
 export type BitValue = 1 | 0;
 
-export class EnumBitMask<T extends readonly string[]> {
+export class EnumBitMask<T extends readonly string[]> extends Bufferable {
     enumValue: RegisterMaskObject<T>;
 
     constructor(public readonly keys: T, public value: number = 0) {
+        super();
         this.updateEnumObject();
     }
 
@@ -39,10 +40,6 @@ export class EnumBitMask<T extends readonly string[]> {
         }
 
         return ((this.value >> this.keys.indexOf(key as string)) & 1) as BitValue;
-    }
-
-    toBuffer() {
-        return Buffer.from([this.value]);
     }
 
     static createFactory<T extends readonly string[]>(keys: T): () => EnumBitMask<T> {

@@ -1,6 +1,6 @@
 import {EnumBitMask} from "~/EnumBitMask";
 
-export const createStatusMask = EnumBitMask.createFactory([
+export const createOptionsMask = EnumBitMask.createFactory([
     'STATUS',
     'GPIO',
     'SERCOM0',
