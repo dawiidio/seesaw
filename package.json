@@ -1,0 +1,32 @@
+{
+  "name": "xxx",
+  "version": "0.0.1",
+  "description": "Compact design tokens parser",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\"",
+    "build": "tsc & tsc-alias",
+    "build:watch": "(concurrently \"tsc -w\" \"tsc-alias -w\")"
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/dotenv": "^8.2.0",
+    "@types/i2c-bus": "^5.1.2",
+    "@types/node": "^20.11.13",
+    "concurrently": "^8.2.2",
+    "tsc-alias": "^1.8.8",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@dawiidio/quarksy": "^0.0.6",
+    "i2c-bus": "^5.2.3"
+  }
+}
