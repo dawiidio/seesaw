@@ -1,6 +1,6 @@
 {
   "name": "@dawiidio/seesaw",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Adafruit seesaw boards driver for node",
   "main": "dist/index.js",
   "scripts": {
