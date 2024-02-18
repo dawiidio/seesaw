@@ -112,7 +112,7 @@ await device.toggle(15);
 Read raw ADC value
 
 ```ts
-const adcValue: number = await device.analogRead(2); // int
+const adcValue: number = await device.analogRead(2); // int 0-1023
 ```
 
 Read voltage
