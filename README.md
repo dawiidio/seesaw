@@ -47,18 +47,91 @@ main();
 
 ## Supported functionalities
 
--[x] GPIO
--[x] ADC
--[ ] UART
--[ ] Interrupts
--[ ] PWM
--[ ] Eeprom
--[ ] Eeprom
--[ ] Neopixel
--[ ] Touch buttons
+- [x] Device
+- [x] Pin config
+- [x] GPIO
+- [x] ADC
+- [ ] PWM
+- [ ] UART
+- [ ] Interrupts
+- [ ] Eeprom
+- [ ] Neopixel
+- [ ] Touch buttons _(may work with basic GPIO config)_
+
+### Device
+
+#### Reset
+
+device software reset
+
+```ts
+await device.reset();
+```
+
+### Pin config
+
+```ts
+import { Seesaw, SeesawPinMode } from '@dawiidio/seesaw';
+
+//...
+
+device.pinMode(15, SeesawPinMode.OUTPUT);
+// or
+device.pinMode(15, SeesawPinMode.INPUT);
+// or
+device.pinMode(15, SeesawPinMode.INPUT_PULLDOWN);
+// or
+device.pinMode(15, SeesawPinMode.INPUT_PULLUP);
+```
+
+### GPIO
+
+#### Write
+
+```ts
+const pinValue = true;
+await device.digitalWrite(15, pinValue);
+```
+
+#### Read
+
+```ts
+const pinValue: boolean = await device.digitalRead(15);
+```
+
+#### Toggle
+
+```ts
+await device.toggle(15);
+```
+
+### ADC
+
+## Read
+
+Read raw ADC value
+
+```ts
+const adcValue: number = await device.analogRead(2); // int
+```
+
+Read voltage
+
+```ts
+const device = new Seesaw({
+    bus,
+    address,
+    adcRefVoltage: 3.3 // by default 3.3, if your Seesaw board runs on 5v set 5 here
+});
+
+// ...
+
+// below value will be based on voltage set in the constructor settings  
+const adcValue: number = await device.analogReadVoltage(2); // float
+```
 
 ## Supported microcontrollers
 
--[x] Attiny8xx
--[x] Attiny16xx
--[x] SAMD09
+- [x] Attiny8xx
+- [x] Attiny16xx
+- [x] SAMD09

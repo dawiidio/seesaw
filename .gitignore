@@ -2,3 +2,4 @@ dist
 node_modules
 rsync.config.js
 index.ts
+src/index-test.ts

@@ -133,6 +133,10 @@ export class Seesaw {
         await this.digitalWrite(pin, !status.read(pin));
     }
 
+    async digitalRead(pin: number) {
+        return Boolean((await this.fetchGpioStatus()).read(pin));
+    }
+
     async reset() {
         await this.write(SeesawRegisters.STATUS, SeesawSubRegisters.STATUS_SWRST, createBuffer([0xff]));
         await wait(100);
